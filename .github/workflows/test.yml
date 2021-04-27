@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - secret: ${{ secrets.ECHIDNA_TOKEN_WEBCODECS }}
-          - secret: ${{ secrets.ECHIDNA_TOKEN_REGISTRY }}
+          - echidna_token: ECHIDNA_TOKEN_WEBCODECS
+          - echidna_token: ECHIDNA_TOKEN_REGISTRY
 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +22,6 @@ jobs:
       - uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ECHIDNA_TOKEN: ${{ matrix.secret }}
+          ECHIDNA_TOKEN: ${{ secrets[matrix.echidna_token] }}
         with:
           filename: .github/test.md
