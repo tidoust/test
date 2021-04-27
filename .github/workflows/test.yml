@@ -1,0 +1,25 @@
+name: Test secrets exposure in matrix
+
+on:
+  pull_request: {}
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - secret: ECHIDNA_TOKEN_WEBCODECS
+          - secret: ECHIDNA_TOKEN_REGISTRY
+
+    steps:
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ECHIDNA_TOKEN: ${{ secrets[matrix.secret]}}
+        with:
+          filename: .github/test.md
