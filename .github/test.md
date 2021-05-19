@@ -1,4 +1,4 @@
 ---
-title: Test secret exposure - {{ env.ECHIDNA_TOKEN }}
+title: Hello world
 ---
 See title.
