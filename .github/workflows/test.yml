@@ -15,6 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
       - uses: JasonEtco/create-an-issue@v2
         with:
           filename: .github/test.md
