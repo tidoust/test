@@ -3,7 +3,9 @@ name: Test trigger on merged PR
 on:
   pull_request:
     branches:
-      - 'release-*'
+      - main
+    paths:
+      - 'test.txt'
     types: [closed]
 
 jobs:
