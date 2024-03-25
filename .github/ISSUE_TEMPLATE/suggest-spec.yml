@@ -33,7 +33,7 @@ body:
       description: |
         A JSON object with the spec properties that cannot be determined automatically, e.g., [`seriesComposition`](https://github.com/w3c/browser-specs/#seriescomposition). Please **ignore this field** unless you know what you're doing. We will check and set properties as needed afterwards.
       render: json
-    value: |
-      {}
+      value: |
+        {}
     validations:
       required: false
