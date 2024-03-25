@@ -47,7 +47,9 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
 
       - name: Add new comment with result
-        if: ${{ failure() && steps.update.conclusion == 'failure' }}
+        # Note the nuance between "conclusion" and "outcome" in:
+        # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+        if: ${{ steps.update.outcome == 'failure' }}
         run: gh issue comment "$NUMBER" --body-file res.md
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
