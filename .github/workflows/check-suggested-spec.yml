@@ -33,7 +33,7 @@ jobs:
       #   run: npm ci
 
       - name: Check suggested spec
-        run: echo "Here's my number ($NUMBER), so call me maybe" > res.md
+        run: echo "Here's my number (#$NUMBER), so call me maybe" > res.md
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
