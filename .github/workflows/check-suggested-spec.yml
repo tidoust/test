@@ -33,7 +33,6 @@ jobs:
       #   run: npm ci
 
       - name: Check suggested spec
-        continue-on-error: true
         run: echo "Here's my number ($NUMBER), so call me maybe" > res.md
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
@@ -41,6 +40,7 @@ jobs:
 
       - name: Update last comment with result (if possible)
         id: update
+        continue-on-error: true
         run: gh issue comment "$NUMBER" --body-file res.md --edit-last
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
