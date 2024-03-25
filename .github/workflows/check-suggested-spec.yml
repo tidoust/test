@@ -38,6 +38,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
 
+      # Report the result within a comment, using the `gh` command.
+      # The `--edit-last` option does not do magic, it does not create a
+      # comment if none exists. Ideally, we would check whether a comment
+      # exists and set/reset the option accordingly. To avoid creating more
+      # logic, we'll just try the command with the option, and then without if
+      # that failed. Note the nuance between "conclusion" and "outcome" in:
+      # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
       - name: Update last comment with result (if possible)
         id: update
         continue-on-error: true
@@ -46,9 +53,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
 
-      - name: Add new comment with result
-        # Note the nuance between "conclusion" and "outcome" in:
-        # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+      - name: Add new comment with result (if none existed)
         if: ${{ steps.update.outcome == 'failure' }}
         run: gh issue comment "$NUMBER" --body-file res.md
         env:
