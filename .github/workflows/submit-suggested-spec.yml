@@ -13,7 +13,7 @@ jobs:
   prepare:
     name: Prepare update to specs.json
     runs-on: ubuntu-latest
-    if: ${{ github.event.author_association == 'OWNER' && contains(github.event.comment, '@browser-specs-bot pr') }}
+    if: ${{ contains(github.event.comment, '@browser-specs-bot pr') }}
     steps:
       - name: Setup node.js
         uses: actions/setup-node@v4
@@ -31,7 +31,8 @@ jobs:
       - name: Check suggested spec and create PR
         id: build
         run: |
-          gh issue create --title "Submit spec suggestion" --body "See #$NUMBER"
+          gh issue create --title "Submit spec suggestion" --body "See #$NUMBER by $AUTHOR"
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
+          AUTHOR: ${{ github.event.author_association }}
