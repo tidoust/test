@@ -34,5 +34,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
-          AUTHOR: ${{ github.event.author_association }}
-          COMMENT: ${{ github.event.comment }}
+          AUTHOR: ${{ github.event.comment.author_association }}
+          COMMENT: ${{ github.event.comment.body }}
