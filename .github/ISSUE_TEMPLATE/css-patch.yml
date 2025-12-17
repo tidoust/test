@@ -1,0 +1,58 @@
+name: CSS syntax patch
+description: Use this template to suggest a correction to the syntax of a CSS construct
+labels: ["css extracts", "patch"]
+title: "Add CSS syntax patch for: <css construct>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!Note]
+        Thank you for proposing a new CSS patch!
+        We use a structured issue in order to gather the info we need to review the patch.
+
+  - type: input
+    id: name
+    attributes:
+      label: CSS construct to patch
+      description: |
+        What is the name of the CSS at-rule, property, selector, function, type or descriptor to patch?
+        The name should typically match one of the names in the underlying CSS extract.
+        Functions should end with `()`. Types should be enclosed in `<>`.
+        You may provide additional context if there's some ambiguity, using a `/`-based path.
+        For example: `<palette-identifier>`, `rgb()`, `stop-color`, or `@page/page/<page-size>`
+    validations:
+      required: true
+
+  - type: textarea
+    id: syntax
+    attributes:
+      label: Syntax of the CSS construct
+      description: |
+        What should the syntax this CSS construct be?
+        Leave the field blank if you're not sure.
+        Note Webref captures what specs define. The syntax should not contain historical tokens that are no longer in the spec or proprietary extensions.
+    validations:
+      required: false
+
+  - type: input
+    id: url
+    attributes:
+      label: Link to the definition in the spec
+      description: |
+        Where is the CSS construct and its syntax defined?
+        This URL should be a link to the relevant version of the spec and include a fragment.
+        For example: `https://drafts.csswg.org/css-fonts-4/#typedef-font-palette-palette-identifier`
+      value: "https://"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: |
+        Anything else we should know about the construct and syntax?
+        For example, did it exist in [`mdn/data`](https://github.com/mdn/data) or some other source?
+        Would it be worth making the syntax more explicit in the spec?
+    validations:
+      required: false
