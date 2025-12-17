@@ -7,7 +7,6 @@ body:
     attributes:
       value: |
         > [!Important]
-        Thank you for proposing a CSS syntax patch!
         Please replace `@@` in the title with the name of the CSS at-rule, property, selector, function, type or descriptor to patch. The name should typically appear in a CSS extract in [`ed/css`](https://github.com/w3c/webref/tree/main/ed/css).
         Function names should end with `()`. Types should be enclosed in `<>`. You may provide additional context if there's some ambiguity, using a `/`-based path.
         For example: `rgb()`, `<palette-identifier>`, `stop-color`, or `@page/page/<page-size>`
@@ -32,6 +31,7 @@ body:
         What should the syntax this CSS construct be?
         Leave the field blank if you're not sure.
         Note Webref captures what specs define. The syntax should not contain historical tokens that are no longer in the spec or proprietary extensions.
+      render: code
     validations:
       required: false
 
