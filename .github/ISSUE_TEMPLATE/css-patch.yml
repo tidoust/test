@@ -6,13 +6,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        > [!Note]
+        > [!Important]
         Thank you for proposing a CSS syntax patch!
-        Please replace `@@` in the issue title with the name of the CSS at-rule, property, selector, function, type or descriptor to patch.
-        That name should typically appear in a CSS extract in [`ed/css`](https://github.com/w3c/webref/tree/main/ed/css).
-        Function names should end with `()`. Types should be enclosed in `<>`.
-        You may provide additional context if there's some ambiguity, using a `/`-based path.
-        For example: `<palette-identifier>`, `rgb()`, `stop-color`, or `@page/page/<page-size>`
+        Please replace `@@` in the title with the name of the CSS at-rule, property, selector, function, type or descriptor to patch. The name should typically appear in a CSS extract in [`ed/css`](https://github.com/w3c/webref/tree/main/ed/css).
+        Function names should end with `()`. Types should be enclosed in `<>`. You may provide additional context if there's some ambiguity, using a `/`-based path.
+        For example: `rgb()`, `<palette-identifier>`, `stop-color`, or `@page/page/<page-size>`
 
   - type: input
     id: url
@@ -45,5 +43,6 @@ body:
         Anything else we should know about the construct and syntax?
         For example, did it exist in [`mdn/data`](https://github.com/mdn/data) or some other source?
         Would it be worth making the syntax more explicit in the spec?
+        Is the syntax defined in one spec and extended elsewhere?
     validations:
       required: false
