@@ -1,4 +1,4 @@
 {
-  "contributors": [],
+  "contributors": ["tidoust"],
   "message": "Thank you for your pull request and welcome to our community. We require contributors to sign our [Contributor License Agreement](https://www.w3.org/), and we don't seem to have the user(s) {{usersWithoutCLA}} on file.\n\nIn order for us to review and merge your code, please send an email to [open-source-cla@w3.org](mailto:open-source-cla@w3.org) that contains the following information:\n\n- Your GitHub handle\n- A link to this Pull Request\n- Blah"
 }
