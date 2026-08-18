@@ -1,0 +1,40 @@
+name: Sign Contributor Agreement
+description: Accept the repository's Contributor Agreement
+title: "[Agreement] Acceptance"
+labels:
+  - pending-agreement
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Contributor Agreement
+
+        Before enabling this template, maintainers must replace this placeholder with the same
+        approved terms stored in `agreement/CONTRIBUTOR_AGREEMENT.md`.
+
+
+  - type: input
+    id: target_branch
+    attributes:
+      label: Target branch
+      description: The branch whose Contributor Agreement registry should be updated. Do not change the prefilled value when following a signing link from a pull request.
+      placeholder: main
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Agreement acceptance
+      options:
+        - label: I have read and agree to the Contributor Agreement.
+          required: true
+
+  - type: checkboxes
+    id: identity
+    attributes:
+      label: Identity confirmation
+      options:
+        - label: I am submitting this agreement for my own authenticated GitHub account.
+          required: true
