@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "installedVersion": "0.2.0-dev",
+  "payloadVersion": 2,
+  "installationType": "installed",
+  "files": {
+    ".github/ISSUE_TEMPLATE/sign-contributor-agreement.yml": {
+      "policy": "customizable",
+      "sha256": "88f411c23bb6c0752d6694b172d5f9340c58d4411e9c1fb4b6596f34901d7359"
+    },
+    ".github/workflows/check-contributor-agreement.yml": {
+      "policy": "managed",
+      "sha256": "28b2c3e760e3cc72cb848913f3780c057adb5071034db161199482bd9f2b6f35"
+    },
+    ".github/workflows/create-agreement-pr.yml": {
+      "policy": "managed",
+      "sha256": "345581b6a8895429fc92b53876bc9105e67012e14f324efb5c9cbe2c074d37c5"
+    },
+    ".github/workflows/refresh-contributor-agreements.yml": {
+      "policy": "managed",
+      "sha256": "98011dd73cbb67851438ec48a710167452f3d9da12f58c018569172bb8e8e63f"
+    },
+    "agreement/CONTRIBUTOR_AGREEMENT.md": {
+      "policy": "customizable",
+      "sha256": "204642ff1a5f4d691265ccd93c65d595cedd562d207a219b72c12e9b6fff651a"
+    },
+    "CLA_REGISTRY.yaml": {
+      "policy": "protected-data"
+    },
+    "scripts/evaluate-contributor-agreement.mjs": {
+      "policy": "managed",
+      "sha256": "90907874bf39300df22f0dc90f3b7750e29429324ace4370117bc227e263f3b2"
+    },
+    "scripts/manage-contributor-agreement-comment.mjs": {
+      "policy": "managed",
+      "sha256": "ec4d95d6161b65116af47eeff48dfd889266ef3f983333fa239a5893e7739ffd"
+    },
+    "scripts/prepare-agreement-pr.mjs": {
+      "policy": "managed",
+      "sha256": "f094809b01b0eb8d606b422a2a6e983314798dadf63c2f89ece21bfe0af16f6f"
+    },
+    "scripts/refresh-contributor-agreements.mjs": {
+      "policy": "managed",
+      "sha256": "545364e90ffe12e85942c0905dbd24128c91f3eb2520862b6e90c3292037e2f6"
+    },
+    "scripts/resolve-agreement-target-branch.mjs": {
+      "policy": "managed",
+      "sha256": "4c0264ff5363d9d2591099867d5d260d2d2344e7029f07d9ad4344dc78bbe8ee"
+    },
+    "lib/agreement-request.js": {
+      "policy": "managed",
+      "sha256": "3e6ca3840f18c45553d061151338c8e1c88cf7c7ce6961c3d4d830677f50f2ff"
+    },
+    "lib/agreement-target.js": {
+      "policy": "managed",
+      "sha256": "de859ddc5301c8d235ab4d6182284556035c9bf692e82d095f62f32ec20e8c40"
+    },
+    "lib/branch.js": {
+      "policy": "managed",
+      "sha256": "34e2dd9e700eb5ff07128379dde448d90ed88d2b816ec7554d44c8578c97fda7"
+    },
+    "lib/contributor-agreement-comment.js": {
+      "policy": "managed",
+      "sha256": "0a41188a36c3155a3fe7028e7f15f81ed3b17ce1fc7eb0fa08f61ab753a269fd"
+    },
+    "lib/enforcement.js": {
+      "policy": "managed",
+      "sha256": "7c8166d5f4b2312c699e539c4aa8305d5955b67de0b346cbb7c036651d3b96fc"
+    },
+    "lib/issue-form.js": {
+      "policy": "managed",
+      "sha256": "534f065e0cba034759ecacbe5acb526e22aafb009b0103d1125ead469b5c8d41"
+    },
+    "lib/refresh.js": {
+      "policy": "managed",
+      "sha256": "e1a25e49eaae57dc2fcda3182311bbdf7bb31830342449e77928de2d246f6e4f"
+    },
+    "lib/registry.js": {
+      "policy": "managed",
+      "sha256": "076cd168ed86442265149b41085e3eaa7c2839d6e6ddf3c75d4eeb2a769e0cde"
+    },
+    "lib/status.js": {
+      "policy": "managed",
+      "sha256": "e8f40f9366854d49c9236b21b44d0f1cd9ff2ceddb1a8a6cf0c723ac10b8c3f1"
+    }
+  }
+}
